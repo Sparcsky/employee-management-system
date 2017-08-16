@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Context>
+    <Resource name="jdbc/mysqlHikari" auth="Container"
+              type="javax.sql.DataSource"
+              factory="com.zaxxer.hikari.HikariJNDIFactory"
+              maximumPoolSize="10"
+              connectionTimeout="300000"
+              dataSourceClassName="com.mysql.jdbc.jdbc2.optional.MysqlDataSource"
+              dataSource.url="jdbc:mysql://localhost:3306/demo?useSSL=false"
+              dataSource.user="root"
+              dataSource.password="12345"
+    />
+
+</Context>
