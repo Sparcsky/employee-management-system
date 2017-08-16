@@ -1,5 +1,6 @@
 package com.sparcsky.ems;
 
+import com.sparcsky.ems.model.Employee;
 import com.sparcsky.ems.utils.DButil;
 
 import javax.naming.NamingException;
@@ -24,7 +25,6 @@ public class EmployeeDao implements BaseDao<Employee> {
         } catch (SQLException | NamingException e) {
             e.printStackTrace();
         }
-
     }
 
 

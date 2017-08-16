@@ -1,4 +1,4 @@
-package com.sparcsky.ems;
+package com.sparcsky.ems.model;
 
 import java.io.Serializable;
 

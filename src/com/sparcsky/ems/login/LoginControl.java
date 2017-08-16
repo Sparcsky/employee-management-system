@@ -1,8 +1,7 @@
 package com.sparcsky.ems.login;
 
-import com.sparcsky.ems.Employee;
-import com.sparcsky.ems.EmployeeDao;
-import com.sparcsky.ems.utils.Debug;
+import com.sparcsky.ems.Service;
+import com.sparcsky.ems.ServiceFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,19 +17,15 @@ public class LoginControl extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        Debug.getInstance().init(response.getWriter());
         response.setContentType("text/html");
 
-        String email = request.getParameter("email-login");
-        String password = request.getParameter("password-login");
+        Service login = ServiceFactory.getAction(request);
+        String view = login.execute(request, response);
 
-        EmployeeDao employeeDao = new EmployeeDao();
-        Employee employee = employeeDao.find(email, password);
-
-        if (employee != null) {
-            request.getRequestDispatcher("page/homepage.jsp").forward(request, response);
-        }else {
-            request.getRequestDispatcher("page/login.jsp").forward(request, response);
+        if (!view.equals(request.getServletPath())) {
+            request.getRequestDispatcher(view + ".jsp").forward(request, response);
+        } else {
+            response.sendRedirect(view + ".jsp");
         }
     }
 }
