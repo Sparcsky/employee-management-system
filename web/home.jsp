@@ -43,34 +43,34 @@
                 <p class="employee-info">EMPLOYEE INFORMATION</p>
             </div>
             <div class="personal-info">
-                <input type="text" placeholder="first name" name="first-name">
-                <input type="text" placeholder="last name" name="last-name">
-                <input type="text" placeholder="M.I" name="M.I" maxlength="1">
+                <input type="text" placeholder="first name" name="first-name" required>
+                <input type="text" placeholder="last name" name="last-name" required>
+                <input type="text" placeholder="M.I" name="M.I" maxlength="1" required>
             </div>
             <div class="personal-info">
                 <input type="text" placeholder="address" name="address">
             </div>
             <div class="personal-info">
-                <input type="tel" placeholder="phone number" name="phone-number">
-                <input type="email" placeholder="email" name="email-address">
+                <input type="tel" placeholder="phone number" name="phone-number" required>
+                <input type="email" placeholder="email" name="email-address" required>
             </div>
             <div class="personal-info">
                 <input placeholder="birth date" name="birth-date" class="date" type="text"
                        onfocus="(this.type='date')"
-                       onblur="(this.type='text')">
-                <input type="text" placeholder="birth place" name="birth-place">
+                       onblur="(this.type='text')" required>
+                <input type="text" placeholder="birth place" name="birth-place" required>
             </div>
             <div class="personal-info">
                 <label>
                     Gender
-                    <select name="gender">
+                    <select name="gender" required>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
                 </label>
                 <label>
                     Marital Status
-                    <select name="marital-status">
+                    <select name="marital-status" required>
                         <option value="single">Single</option>
                         <option value="married">Married</option>
                         <option value="divorced">Divorced</option>
@@ -102,17 +102,25 @@
                         <div class="cell">Birth date</div>
                         <div class="cell">Birth place</div>
                         <div class="cell">Gender</div>
-                        <div class="cell">${phoneNumber}</div>
+                        <div class="cell">Marital Status</div>
+
+
                     </div>
+
                     <c:forEach items="${employees}" var="employee">
                         <div class="row">
-                            <div class="cell"> <c:out value="${employee.email}"/></div>
-                            <div class="cell">${employee.password}</div>
-                            <div class="cell">${email}</div>
-                            <div class="cell">${birthDate}}</div>
-                            <div class="cell">${birthPlace}</div>
-                            <div class="cell">${gender}</div>
-                            <div class="cell">${maritalStatus}</div>
+                            <div class="cell"><c:out value="${employee.email}"/></div>
+                            <div class="cell">${employee.personInfo.firstName}</div>
+                            <div class="cell">${employee.personInfo.lastName}</div>
+                            <div class="cell">${employee.personInfo.middleName}</div>
+                            <div class="cell">${employee.personInfo.address}</div>
+                            <div class="cell">${employee.personInfo.phoneNumber}</div>
+                            <div class="cell">${employee.email}</div>
+                            <div class="cell">${employee.personInfo.birthDate}</div>
+                            <div class="cell">${employee.personInfo.birthPlace}</div>
+                            <div class="cell">${employee.personInfo.gender}</div>
+                            <div class="cell">${employee.personInfo.maritalStatus}</div>
+
                         </div>
                     </c:forEach>
 

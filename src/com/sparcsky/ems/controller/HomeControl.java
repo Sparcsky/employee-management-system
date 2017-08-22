@@ -21,7 +21,7 @@ public class HomeControl extends HttpServlet {
         if (view.equals(request.getServletPath())) {
             request.getRequestDispatcher(view + ".jsp").forward(request, response);
         } else {
-            request.getRequestDispatcher("/home.jsp").forward(request, response);
+            request.getRequestDispatcher("/login").forward(request, response);
         }
     }
 }

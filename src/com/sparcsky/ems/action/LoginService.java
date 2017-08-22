@@ -27,9 +27,9 @@ public class LoginService implements Service {
 
         if (employee != null) {
             request.setAttribute("employees", employees);
-            request.setAttribute("phoneNumber",employee.getPersonInfo().getPhoneNumber());
-            request.getSession().setAttribute("email", employee.getEmail());
             request.setAttribute("email", employee.getEmail());
+            request.setAttribute("email",employees.get(0).getFirstName());
+            request.getSession().setAttribute("email", employee.getEmail());
             return "/home";
         }
         return "/login";

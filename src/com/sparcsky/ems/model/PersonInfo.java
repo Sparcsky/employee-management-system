@@ -17,18 +17,18 @@ public class PersonInfo implements Serializable {
     private String gender;
     private String maritalStatus;
     private String phoneNumber;
-    private String strDate;
+    private String birthDate;
 
     public PersonInfo() {
 
     }
 
     public void setDate(String date) {
-        this.strDate = date;
+        this.birthDate = date;
     }
 
     public java.sql.Date getBirthDate() {
-        String myDate = strDate.replace("[", "").replace("]", "").trim();
+        String myDate = birthDate.replace("[", "").replace("]", "").trim();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         java.sql.Date sqlDate = null;
         try {

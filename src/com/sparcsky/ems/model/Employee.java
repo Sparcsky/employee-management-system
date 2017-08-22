@@ -31,4 +31,7 @@ public class Employee implements Serializable {
     public PersonInfo getPersonInfo() {
         return personInfo;
     }
+    public String getFirstName(){
+        return personInfo.getFirstName();
+    }
 }
