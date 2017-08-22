@@ -1,16 +1,15 @@
-package com.sparcsky.ems.login;
+package com.sparcsky.ems.controller;
 
-import com.sparcsky.ems.Service;
-import com.sparcsky.ems.ServiceFactory;
+import com.sparcsky.ems.action.Service;
+import com.sparcsky.ems.action.ServiceFactory;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(value = "/login")
+//@WebServlet(value = "/login", name = "LoginControl")
 
 public class LoginControl extends HttpServlet {
 
@@ -25,7 +24,7 @@ public class LoginControl extends HttpServlet {
         if (!view.equals(request.getServletPath())) {
             request.getRequestDispatcher(view + ".jsp").forward(request, response);
         } else {
-            response.sendRedirect(view + ".jsp");
+            response.sendRedirect(request.getContextPath() + view + ".jsp");
         }
     }
 }

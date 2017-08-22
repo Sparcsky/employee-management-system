@@ -1,13 +1,13 @@
-package com.sparcsky.ems.login;
+package com.sparcsky.ems.action;
 
-import com.sparcsky.ems.EmployeeDao;
-import com.sparcsky.ems.Service;
 import com.sparcsky.ems.model.Employee;
+import com.sparcsky.ems.model.EmployeeDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 public class LoginService implements Service {
 
@@ -21,11 +21,17 @@ public class LoginService implements Service {
         EmployeeDao employeeDao = new EmployeeDao();
         Employee employee = employeeDao.find(email, password);
 
+        employeeDao.open();
+
+        List<Employee> employees = employeeDao.getList();
+
         if (employee != null) {
-            request.getSession().setAttribute("employee", employee);
+            request.setAttribute("employees", employees);
+            request.setAttribute("phoneNumber",employee.getPersonInfo().getPhoneNumber());
+            request.getSession().setAttribute("email", employee.getEmail());
+            request.setAttribute("email", employee.getEmail());
             return "/home";
         }
-
         return "/login";
     }
 }

@@ -41,18 +41,19 @@
 </div>
 
 <div class="sign-up" id="sign-up">
-    <form action="${pageContext.request.contextPath}/signup" method="post" onsubmit="return validate()" name=signUp>
-
+    <form action="${pageContext.request.contextPath}/register" method="post" onsubmit="return validate()" name=signUp>
 
         <label class="sign-up-label">Email</label>
-        <input class="sign-up-textBox" id="email_address" type="email" placeholder="Enter Email" name="email_address"
+        <input class="sign-up-textBox" id="email_address" type="email" placeholder="Enter Email" name="email-sign-up"
                required>
 
         <label class="sign-up-label">Password</label>
-        <input class="sign-up-textBox" id="psw" type="password" placeholder="Enter Password" name="psw" required>
+        <input class="sign-up-textBox" id="psw" type="password" placeholder="Enter Password" name="password-sign-up"
+               required>
 
         <label class="sign-up-label">Repeat Password</label>
-        <input class="sign-up-textBox" id="psw-repeat" type="password" placeholder="Repeat Password" name="psw-repeat"
+        <input class="sign-up-textBox" id="psw-repeat" type="password" placeholder="Repeat Password"
+               name="password-repeat-sign-up"
                required>
 
         <div class="sign-up-button">
@@ -65,6 +66,5 @@
 </div>
 
 <script src="${pageContext.request.contextPath}/script/Modal.js"></script>
-<% response.getWriter().flush(); %>
 </body>
 </html>

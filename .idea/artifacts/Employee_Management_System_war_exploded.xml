@@ -7,6 +7,11 @@
         <element id="directory" name="classes">
           <element id="module-output" name="Employee Management System" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="HikariCP-2.6.3" />
+          <element id="library" level="project" name="jstl-1.2" />
+          <element id="library" level="project" name="lib" />
+        </element>
       </element>
     </root>
   </artifact>

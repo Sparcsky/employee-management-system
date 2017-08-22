@@ -1,4 +1,4 @@
-package com.sparcsky.ems;
+package com.sparcsky.ems.model;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ public interface BaseDao<T> {
 
     T find(String ID, String password);
 
-    List<T> find();
+    List<T> getList();
 
     void insert(T value);
 

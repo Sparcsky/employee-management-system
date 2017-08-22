@@ -1,6 +1,4 @@
-package com.sparcsky.ems;
-
-import com.sparcsky.ems.login.LoginService;
+package com.sparcsky.ems.action;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -14,16 +12,16 @@ public class ServiceFactory {
 
         String path = request.getServletPath();
 
-        System.out.println("ACTION NAME:     " + path);
-
         if (!services.containsKey(path)) {
             if (path.equals("/login")) {
                 services.put(path, new LoginService());
+            } else if (path.equals("/register")) {
+                services.put(path, new SignUpService());
+            } else if (path.equals("/home")) {
+                services.put(path, new HomeService());
             }
         }
 
         return services.get(path);
     }
-
-
 }

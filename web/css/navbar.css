@@ -1,0 +1,30 @@
+div.nav-menu {
+    display: inline-block;
+    background-color: #00a50f;
+    margin: 0 auto;
+}
+
+
+div.nav-email-container {
+    display: inline-block;
+    float: right;
+    margin: 0 auto;
+}
+
+p.nav-email, input.nav-email {
+    display: inline-block;
+}
+
+input.nav-email {
+    border: 2px solid rgba(255, 255, 255, 0.56);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+p {
+    font-family: monospace;
+    font-size: 1.2em;
+    font-weight: bolder;
+    color: #ffffff;
+}
