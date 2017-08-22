@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - demo@localhost" uuid="8db06b7c-1452-4b09-9c65-97c12a4461d3">
+    <database-info product="MySQL" version="5.7.19-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="demo"/>
+      <table id="2" parent="1" name="company_details"/>
+      <table id="3" parent="1" name="personal_details"/>
+      <table id="4" parent="1" name="user"/>
+      <column id="5" parent="2" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="6" parent="2" name="department">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="7" parent="2" name="position">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="8" parent="2" name="status">
+        <data-type>tinyint(4)</data-type>
+      </column>
+      <column id="9" parent="2" name="appointment_type">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="10" parent="2" name="salary">
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="11" parent="2" name="PRIMARY">
+        <columns>ID</columns>
+        <primary>1</primary>
+      </key>
+      <column id="12" parent="3" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="13" parent="3" name="first_name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="14" parent="3" name="last_name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="15" parent="3" name="middle_initial">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="16" parent="3" name="address">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="17" parent="3" name="birth_date">
+        <data-type>date</data-type>
+      </column>
+      <column id="18" parent="3" name="birth_place">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="19" parent="3" name="gender">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="20" parent="3" name="marital_status">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="21" parent="3" name="phone_number">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <key id="22" parent="3" name="PRIMARY">
+        <columns>ID</columns>
+        <primary>1</primary>
+      </key>
+      <column id="23" parent="4" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="24" parent="4" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="25" parent="4" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <key id="26" parent="4" name="PRIMARY">
+        <columns>ID</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
